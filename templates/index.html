@@ -3,20 +3,33 @@
 
 {% block main%}
 
-<h1> URL SHORTENER </h1>
+<div class="container">
+    <div class="card-deck mb-3">
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal text-center">Website</h4>
+            </div>
+            <div class="card-body">
+                <form action="your-url" method="POST">
+                    <label for="code">Short Name</label>
+                    <input type="text" class="form-control" name="code" id="code" value="" required>
+                    <br>
+                    <label for="url">Website URL</label>
+                    <input type="url" class="form-control" name="url" id="url" value="" required>
+                    <br>  
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Shorten</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-<form action="your-url" method="POST">
-    <label for="url">Website URL</label>
-    <input type="url" name="url" value="" required>
-    <br>
-    <label for="code">Short Name</label>
-    <input type="text" name="code" value="" required>
-    <br>
-    <input type="submit" value="Shorten">
-    
-</form>
 
-{% if codes %}
+
+<!-- {% if codes %}
 <h2>Codes you have created</h2>
 <ul>
     {% for code in codes%}
@@ -25,6 +38,6 @@
     </a>
     {% endfor %}
 </ul>
-{% endif %}
+{% endif %} -->
 
 {% endblock%}
